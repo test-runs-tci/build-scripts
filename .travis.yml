@@ -15,6 +15,6 @@ script:
     - sudo apt update -y && sudo apt-get install file -y
     - pip3 install requests
     - pip3 install docker
-    - python3 script/validate_builds.py $TRAVIS_PULL_REQUEST
+    - python3 script/validate_builds.py $TRAVIS_PULL_REQUEST &
     - SCRIPT_PID=$!;while ps -p $SCRIPT_PID > /dev/null;do echo "$SCRIPT_PID is running"; sleep 10; done; wait $SCRIPT_PID; my_pid_status=$?; travis_terminate $my_pid_status
     - sleep 10
