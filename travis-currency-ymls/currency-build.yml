@@ -1,13 +1,14 @@
 
 os: linux
 dist: focal
-arch: ppc64le
+#arch: ppc64le
 language: shell
 
 branches:
   only:
     - master
-
+vm:
+  size: x-large
 env:
   global:
     - ENABLE_TRIVY=true
